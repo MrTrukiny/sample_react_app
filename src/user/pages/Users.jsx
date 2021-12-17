@@ -4,7 +4,7 @@ const Users = () => {
   const USERS = [
     {
       id: 'u1',
-      name: 'Eduardo Hernández',
+      name: 'Eduardo Hdez',
       image: 'https://avatars.githubusercontent.com/u/3603321?v=4',
       places: 3,
     },
