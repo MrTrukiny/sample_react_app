@@ -8,7 +8,6 @@ export const useHttpClient = () => {
 
   const sendRequest = useCallback(
     async ({ url, method = 'GET', body = null, headers = {} } = {}) => {
-      console.log(url, method, body, headers);
       setIsLoading(true);
       const httpAbortCtrl = new AbortController();
       activeHttpRequests.current.push(httpAbortCtrl);
@@ -33,7 +32,7 @@ export const useHttpClient = () => {
             error || 'Something went wrong! Please try again later.';
           if (Array.isArray(errors)) {
             errorMsg = errors.reduce((prev, curr) => {
-              return prev + curr.msg;
+              return prev + curr.msg + ' ';
             }, '');
           }
           throw new Error(errorMsg);

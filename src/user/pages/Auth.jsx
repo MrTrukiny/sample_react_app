@@ -68,7 +68,7 @@ const Auth = () => {
 
     if (isLoginMode) {
       try {
-        await sendRequest({
+        const responseData = await sendRequest({
           url: 'http://localhost:3001/api/users/login',
           method: 'POST',
           body: JSON.stringify({
@@ -79,11 +79,11 @@ const Auth = () => {
             'Content-Type': 'application/json',
           },
         });
-        auth.login();
+        auth.login(responseData.data.user._id);
       } catch (err) {}
     } else {
       try {
-        await sendRequest({
+        const responseData = await sendRequest({
           url: 'http://localhost:3001/api/users/signup',
           method: 'POST',
           body: JSON.stringify({
@@ -96,7 +96,7 @@ const Auth = () => {
           },
         });
 
-        auth.login();
+        auth.login(responseData.data.user._id);
       } catch (err) {}
     }
   };
