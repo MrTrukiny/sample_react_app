@@ -6,7 +6,7 @@ import Button from '../../shared/components/FormElements/Button';
 // Styles
 import './PlacesList.css';
 
-const PlaceList = (props) => {
+const PlacesList = (props) => {
   if (props.items.length === 0) {
     return (
       <div className="place-list center">
@@ -22,9 +22,9 @@ const PlaceList = (props) => {
     <ul className="place-list">
       {props.items.map((place) => (
         <PlaceItem
-          key={place.id}
-          id={place.id}
-          image={place.imageUrl}
+          key={place._id}
+          id={place._id}
+          image={place.image}
           title={place.title}
           description={place.description}
           address={place.address}
@@ -36,4 +36,4 @@ const PlaceList = (props) => {
   );
 };
 
-export default PlaceList;
+export default PlacesList;
