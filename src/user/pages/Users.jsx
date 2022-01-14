@@ -19,7 +19,7 @@ const Users = () => {
           url: 'http://localhost:3001/api/users',
         });
 
-        setLoadedUsers(responseData.data);
+        setLoadedUsers(responseData.data.users);
       } catch (err) {}
     };
     fetchUsers();
