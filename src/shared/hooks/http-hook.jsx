@@ -33,7 +33,15 @@ export const useHttpClient = () => {
         );
 
         if (!response.ok) {
-          throw new Error(responseData.message);
+          const { error, errors } = responseData;
+          let errorMsg =
+            error || 'Something went wrong! Please try again later.';
+          if (Array.isArray(errors)) {
+            errorMsg = errors.reduce((prev, curr) => {
+              return prev + curr.msg;
+            }, '');
+          }
+          throw new Error(errorMsg);
         }
 
         setIsLoading(false);
