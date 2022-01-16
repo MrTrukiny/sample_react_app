@@ -83,8 +83,12 @@ const Auth = () => {
       } catch (err) {}
     } else {
       try {
+<<<<<<< HEAD
         const responseData = await sendRequest({
           url: 'http://localhost:3001/api/users/signup',
+=======
+        const response = await fetch('http://localhost:3001/api/users/signup', {
+>>>>>>> 1c77707293e6f98dbea70178b2b47b94d33293fe
           method: 'POST',
           body: JSON.stringify({
             name: formState.inputs.name.value,
