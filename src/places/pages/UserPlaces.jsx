@@ -29,7 +29,7 @@ const UserPlaces = () => {
 
   const placeDeletedHandler = (deletedPlaceId) => {
     setLoadedPlaces((prevPlaces) =>
-      prevPlaces.filter((place) => place.id !== deletedPlaceId)
+      prevPlaces.filter((place) => place._id !== deletedPlaceId)
     );
   };
 

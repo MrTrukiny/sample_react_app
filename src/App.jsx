@@ -17,7 +17,7 @@ import { AuthContext } from './shared/context/auth-context';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userId, setUserId] = useState(null);
+  const [userId, setUserId] = useState(false);
 
   const login = useCallback((userId) => {
     setIsLoggedIn(true);
@@ -30,7 +30,6 @@ const App = () => {
   }, []);
 
   let routes;
-
   if (isLoggedIn) {
     routes = (
       <Switch>
